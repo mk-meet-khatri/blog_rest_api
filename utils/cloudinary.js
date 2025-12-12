@@ -20,7 +20,8 @@ const uploadFileToCloudinary = ({ file, ext }) => {
     const keyWithExtension = `${Key}${ext}`;
     const stream = cloudinary.uploader.upload_stream(
       {
-        public_id: `uploads/${Key}`,
+        folder: "uploads",
+        public_id: Key,
         resource_type: "auto",
         type: "authenticated",
         // access_mode: "authenticated",
